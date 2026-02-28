@@ -17,4 +17,21 @@ ros2 launch wpr_simulation2 wpb_simple.launch.py //start 3D simulation gui GAZEB
 	2、左右分屏：ctrl+shift+e;
 	3、上下分屏：ctrl+shift+o;
 	4、转换焦点：alt+上下左右键；
-	5
+	5. 删除当前窗口：ctrl+w；
+
+创建pkg： 
+	ros1: catkin_create_pkg ssr_pkg rospy roscpp std_msgs
+	ros2: ros2 pkg create ssr_pkg --build-type ament_cmake --dependencies rclcpp rclpy std_msgs
+查询pkg路径：ros2 pkg prefix <pkg_name>
+
+编译ssr_pkg：
+	cd ~/catkin_ws && colcon build --packages-select ssr_pkg
+
+运行chao_node：
+	source ~/catkin_ws/install/setup.bash
+	ros2 run ssr_pkg chao_node
+	
+查看topic命令：
+	ros2 topic list 查看回话列表
+	ros2 topic echo <topic_name> 回显回话发布内容
+	更多命令ros2 topic -h
