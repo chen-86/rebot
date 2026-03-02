@@ -35,3 +35,4 @@ ros2 launch wpr_simulation2 wpb_simple.launch.py //start 3D simulation gui GAZEB
 	ros2 topic list 查看回话列表
 	ros2 topic echo <topic_name> 回显回话发布内容
 	更多命令ros2 topic -h
+查看节点间的关系：rqt_graph
